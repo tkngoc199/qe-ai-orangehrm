@@ -8,16 +8,38 @@ Gemini
 
 2026-08-17
 
-## Response
+## Prompt Summary
 
-- Complete Login Workflow: Mô tả đầy đủ tiến trình từ khi gửi HTTP GET, qua kiểm tra Frontend/Backend, cấp Session/Token đến khi redirect, đi kèm sơ đồ luồng (Flow Diagram).
+Describe the complete Login workflow of OrangeHRM including:
 
-- Validation Rules: Bảng tổng hợp các quy tắc kiểm tra dữ liệu ở cả 2 cấp độ Client (Required, Space) và Server (CSRF token, Account Status, SQLi/XSS).
+- Validation rules
+- Error messages
+- Session behavior
+- User roles
+- Security considerations
 
-- Error Messages: Bảng liệt kê chi tiết các thông báo lỗi chuẩn (ví dụ: Invalid credentials để chống User Enumeration, Required, lỗi CSRF token).
+## AI Key Assumptions
 
-- Session Behavior: Phân tích cơ chế tạo Session Cookie với các cờ bảo mật (HttpOnly, Secure, SameSite), cơ chế tự động Hết hạn (Idle Timeout) và Hủy phiên/Xóa Cache khi Logout.
+### Login Workflow
+- Login process involves frontend validation and backend authentication.
+- Users are redirected after successful login.
 
-- User Roles: Phân quyền chi tiết cho Admin, ESS, Supervisor, HR Admin kèm trang chuyển hướng (Landing Page) tương ứng.
+### Validation Rules
+- Required field validation exists.
+- Server-side validation is implemented.
+- Security validation may include SQL injection and XSS protection.
 
-- Security Considerations: Bao gồm đầy đủ các chuẩn bảo mật nâng cao như BCrypt/Argon2 hashing, chống Brute-Force, chống CSRF, chống dò username và mã hóa đường truyền HTTPS.
+### Error Messages
+- "Invalid credentials" may be displayed for invalid login attempts.
+
+### Session Behavior
+- Session cookies may use HttpOnly, Secure and SameSite settings.
+- Session timeout may exist.
+
+### User Roles
+- Roles may include Admin, ESS, Supervisor and HR Admin.
+
+### Security Considerations
+- CSRF protection may exist.
+- Brute-force protection may exist.
+- Password hashing may use BCrypt or Argon2.
